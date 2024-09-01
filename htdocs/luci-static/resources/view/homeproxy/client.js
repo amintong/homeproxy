@@ -169,14 +169,14 @@ return view.extend({
 		o.rmempty = false;
 		o.depends({'routing_mode': 'custom', '!reverse': true});
 		o.validate = function(section_id, value) {
-			if (section_id && !['wan'].includes(value)) {
-				var ipv6_support = this.map.lookupOption('ipv6_support', section_id)[0].formvalue(section_id);
+			// if (section_id && !['wan'].includes(value)) {
+			// 	var ipv6_support = this.map.lookupOption('ipv6_support', section_id)[0].formvalue(section_id);
 
-				if (!value)
-					return _('Expecting: %s').format(_('non-empty value'));
-				else if (!stubValidator.apply((ipv6_support === '1') ? 'ipaddr' : 'ip4addr', value))
-					return _('Expecting: %s').format(_('valid IP address'));
-			}
+			// 	if (!value)
+			// 		return _('Expecting: %s').format(_('non-empty value'));
+			// 	else if (!stubValidator.apply((ipv6_support === '1') ? 'ipaddr' : 'ip4addr', value))
+			// 		return _('Expecting: %s').format(_('valid IP address'));
+			// }
 
 			return true;
 		}
