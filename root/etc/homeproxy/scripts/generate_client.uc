@@ -401,7 +401,7 @@ if (!isEmpty(main_node)) {
 	if (dns_server !== wan_dns) {
 		push(config.dns.servers, {
 			tag: 'main-dns',
-			address: 'tcp://' + (validation('ip6addr', dns_server) ? `[${dns_server}]` : dns_server),
+			address: dns_server,
 			strategy: (ipv6_support !== '1') ? 'ipv4_only' : null,
 			detour: 'main-out'
 		});
