@@ -402,6 +402,7 @@ if (!isEmpty(main_node)) {
 		push(config.dns.servers, {
 			tag: 'main-dns',
 			address: dns_server,
+			address_resolver: 'default-dns',
 			strategy: (ipv6_support !== '1') ? 'ipv4_only' : null,
 			detour: 'main-out'
 		});
